@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor de código
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno
+.env
+
+# Build
+dist/
+
+# Cache de Vite
+.vite/**
+
+# Otros
+*.log
+temp/**
+coverage/
+

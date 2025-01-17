@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-react",
+  "version": "1.0.0",
+  "description": "Este es un proyecto de portafolio creado con **React**, **CSS**, **JavaScript** y configurado con **Vite** para un desarrollo rápido y eficiente.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

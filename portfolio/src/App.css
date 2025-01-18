@@ -1,95 +1,7 @@
-/*
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-*/
-/*article{
-  width: 56rem;
-}
-
-figure{
-  margin-right: 1rem;
-}
-img{
-  height: 23rem;
-  border-radius: 30px;
-}
-ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 30px;
-  width: 21rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-a{
-  text-decoration: none;
-}
-div{
-  line-height: 2rem;
-}
-
-strong{
-  font-size: 3rem;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-article{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-}
-p{
-  margin: 0;
-}
-span{
-  margin: auto;
-}
-*/
-
 /* Style Header*/
+.pt-header{
+  height: 97vh;
+}
 .pt-header > * {
   margin: 0;
   padding: 0;
@@ -160,6 +72,7 @@ span{
 /* Style Main */
 main{
   margin: 2.5rem;
+  margin-top: 0;
   max-width: 150vh;
 }
 .pt-main-tittles{
@@ -167,37 +80,61 @@ main{
   margin: 0;
   font-size: 4rem;
   margin-bottom: 9rem;
+}
+
+.pt-main-terminal{
+    padding: 1.5rem;
+    background: #000000;
+    color: #fff;
+    font-family: monospace, Arial;
+    width: 70%;
+    min-height: 27.5rem;
+    margin: 0 auto;
+    border-radius: 0.625rem;
+    margin-bottom: 9rem;
 
 }
 
-.pt-main-image{
+
+
+
+
+/* Style ProyectCard as pc*/
+.pc-image{
   width: 30rem;
   height: 19rem;
   border-radius: 3rem;
-  box-shadow: 1px 1px 1px #000000a3;
-
+  box-shadow: 0px 0px 10px #e1e0e0b1;
+  aspect-ratio: 1/1;
 }
 
-.pt-main-article{
+
+
+.pc-article:hover{
+  transform: scale(1.1);
+  transition: all 0.1s cubic-bezier(.4,0,.2,1);
+}
+.pc-article{
   display: flex;
+  margin-bottom: 9rem;
 }
 
-.pt-main-article div{
+.pc-article div{
   display: flex;
   flex-direction: column;
 
 }
-.pt-main-article strong{
+.pc-article strong{
   font-size: 2rem;
 }
 
 
-.pt-main-article nav{
+.pc-article nav{
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.pt-main-article nav a{
+.pc-article nav a{
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
@@ -205,17 +142,125 @@ main{
   background-color:rgb(91, 114, 91);
 }
 
-.pt-main-article nav a:hover{
+.pc-article nav a:hover{
   background-color: #1a1a1a;
   box-shadow: 1px 1px 1px #8e8e8e87;
 
 }
-.pt-main-description{
+.pc-description{
   color: rgb(177, 173, 167);
   line-height: 1.5rem;
+  min-width: 33.344rem;
+  max-width: 33.4rem;
+
+
 }
 
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .pt-header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pt-header-imagenDev {
+    width: 20rem;
+  }
+
+  .pt-header-nameDev {
+    font-size: 5rem;
+  }
+
+  .pt-header-description {
+    font-size: 2rem;
+  }
+
+  .pt-main-terminal {
+    width: 90%;
+    min-height: 20rem;
+  }
+
+  .pc-image {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  .pc-article {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pc-description {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pt-header-container {
+    padding: 1rem;
+  }
+
+  .pt-header-imagenDev {
+    width: 15rem;
+  }
+
+  .pt-header-nameDev {
+    font-size: 3rem;
+  }
+
+  .pt-header-description {
+    font-size: 1.5rem;
+  }
+
+  .pt-header-containerLinks > li > a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .pt-main-tittles {
+    font-size: 3rem;
+  }
+
+  .pc-image {
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pt-header-container {
+    padding: 0.5rem;
+  }
+
+  .pt-header-imagenDev {
+    width: 12rem;
+  }
+
+  .pt-header-nameDev {
+    font-size: 2rem;
+  }
+
+  .pt-header-description {
+    font-size: 1rem;
+  }
+
+  .pt-header-containerLinks > li > a {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
+
+  .pc-image {
+    width: 15rem;
+    height: 10rem;
+  }
+
+  .pc-description {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
 
 
 

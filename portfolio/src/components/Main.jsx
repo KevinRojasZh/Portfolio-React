@@ -1,45 +1,50 @@
 import React from 'react';
-import { Link } from './utils/link.jsx';
-import { SvgGithub,SvgEnlace } from './icons/icons.jsx';
-import imageProyecto1 from '../assets/proyecto1.png'
-
-
-
+import { Link } from './utils/Link.jsx';
+import { Image } from './utils/Image.jsx';
+import  proyectos  from './data/Proyectos.jsx';
 
 
 function Main() {
-    const Image = ({src,alt,className})=> (
-        <figure className='pt-main-figure'>
-            <img src={src} alt={alt} className={className}/>
-        </figure>
-
-    )
-    const ProyectCard = ({title,subtitle,description,tecnologias,SvgEnlace,SvgGithub,nameSubtitle,nameDescription,nameTecnologias}) => (
-        <article className='pt-main-article'>
+    /*Creamos el componente ProyectCard que lo vamos a 'inicializar mas alante con el array proyectos' */
+    /*Importante las llaves para evaluar el metodo .map puede utilizarse sin indice y acceder a los valores atraves de las keys */
+    const ProyectCard = ({title,subtitle,description,tecnologias,imageScr,links}) => (
+        <article className='pc-article'>
             <div>
                 <p><strong>{title}</strong></p>
-                <p className={nameSubtitle}>{subtitle}</p>
-                <p className={nameDescription}>{description}</p>
-                <p className={nameTecnologias}>{tecnologias}</p>
+                <p className='pc-subtitle'>{subtitle}</p>
+                <p className='pc-description'>{description}</p>
+                <p className='pc-tecnologias'>{tecnologias}</p>
                 <nav>
-                    <Link  link="https://www.youtube.com/@kenanrojass"Icon={SvgEnlace} />
-                    <Link  link="https://github.com/KevinRojasZh"Icon={SvgGithub} />
+                    {links.map(({href,Icon},index) => (
+                    <Link key={index}  link={href} Icon={Icon} />
+                ))}
                 </nav>
             </div>
 
-                <Image className="pt-main-image" src={imageProyecto1} alt="Captura de pantalla del proyecto MYGRAM"/>
+                <Image className="pc-image" src={imageScr} alt="Captura de pantalla del proyecto ${title}"/>
         </article>
 
 
     );
 
-
+    /* Pasamos los props a ProyectCard atraves del arrray proyectos por medio de un .map */
     return(
         <>
         <main>
             <h2 className='pt-main-tittles'>Proyectos</h2>
-            <ProyectCard title="MyGram" subtitle="Construyendo una red social desde cero" description="Proyecto full stack que replica las funcionalidades clave de Instagram, incluyendo registro de usuarios, carga de imágenes y feed interactivo. Desarrollado con un backend robusto en Django y un frontend dinámico en React, destacando el manejo de datos y la experiencia de usuario." tecnologias="Python JavaScrip" SvgEnlace={SvgEnlace} SvgGithub={SvgGithub} nameSubtitle='pt-main-subtitle' nameDescription='pt-main-description' nameTecnologias='pt-main-tecnologias'/>
+            {proyectos.map((proyecto)=>(
+                <ProyectCard {...proyecto}/>
+            ))}
+
             <h2 className='pt-main-tittles'>Sobre mi </h2>
+            <div className='pt-main-terminal'>
+            <p>Last login: Wed Jan 15 12:01:01 </p>
+            <p>(base) kevinrojaszhuma@icloud.com ~ % 
+            Soy un programador inquieto con una doble vida, ya que trabajo en una prestigiosa empresa de software pero también he cometido todos los crímenes informáticos que existen. Tengo la sensación de que nada es lo que parece ser.</p>
+            </div>
+            <h2 className='pt-main-tittles'>Formacion </h2>
+
+
         </main>
         
         </>

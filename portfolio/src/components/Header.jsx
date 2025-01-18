@@ -1,7 +1,7 @@
 import React from 'react';
 import myImage from '../assets/foto.jpeg'
 import { SvgGithub, SvgLinkedin, SvgMail, SvgCv, SvgDirection } from './icons/icons.jsx';
-import { Link } from './utils/link.jsx';
+import { Link } from './utils/Link.jsx';
 
 function Header() {
 
